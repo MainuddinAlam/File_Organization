@@ -1,2 +1,2 @@
 # Printing hello world in python
-print("Hello world")
+print("Hello, World!")

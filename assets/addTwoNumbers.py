@@ -1,6 +1,6 @@
 # Python program to add two numbers
 
-num1 = int(input("Give your first number: "))
-num2 = int(input("Give your second number: "))
+num1 = float(input("Give your first number: "))
+num2 = float(input("Give your second number: "))
 
-print(num1 + num2)
+print("The result is: " + str(num1 + num2))
