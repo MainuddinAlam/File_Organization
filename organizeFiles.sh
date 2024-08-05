@@ -17,9 +17,19 @@ if [ -d "$directoryPath" ]; then
   # If it exists, go to it
   cd "$directoryPath"
 
-  # Organize the files
+  # Iterate through the files in the directoryy
+  for file in *; do
+    # Check if it is a file and not directory
+    if [ -f "$file" ]; then
+      # Organize the files
+      echo "Handling file: $file"
+
+    fi
+  done
+ 
+
   echo "The files and folders have been organized as follows:"
-  ls -la
+ # ls -la
 
 # Let the user know that his given directory does not exist
 else
