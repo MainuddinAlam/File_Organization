@@ -28,14 +28,33 @@ if [ -d "$directoryPath" ]; then
      
       # Check if the file contains a dot
       if [[ "$file" == *.* ]]; then
+         
           # Extract their extension
           extension="${file##*.}"
           echo "The extension is: $extension"
-      else
+          
+          # Organize the files depending on the extension's case
+          case = "$extension" in
+          
+
+              *)
+                  # Display a line
+                  echo "" 
+                  ;;
+          # Ending the case block
+          esac
+             
+       # Handle when file does not contain a dot
+       else
           echo "The string does not contain a dot."
+     
+      # Ending the if block which handles if file contains a dot
       fi
-      
+    
+    # Ending the if block which checks if it is a file  
     fi
+
+  # Ending the for block
   done
  
   
@@ -46,5 +65,7 @@ if [ -d "$directoryPath" ]; then
 # Let the user know that his given directory does not exist
 else
   echo "The directory you have given does not exist."
+
+# Ending the main if block
 fi 
  
