@@ -32,21 +32,29 @@ if [ -d "$directoryPath" ]; then
           # Organize the files depending on the extension's case
           case = "$extension" in
               # Organize documents
-              pdf | doc | docx | txt | xls | xlsx)
+              pdf | doc | docx | txt | xls | xlsx | ppt | pptx)
              
                   ;;
 
               # Organize images
-              jpg | jpeg | png | gif | bmp
+              jpg | jpeg | png | gif | bmp)
                   
                   ;;
 
               # Organize audio
+              mp3 | wav | flac)
+
+                  ;;
 
               # Organize videos
+              mp4 | avi | mkv | mov)
 
+                  ;;
+              
               # Organize programs       
-
+              py | java | c | cpp | js | sh | ts | cs | go | rb | swift | kt | html |css | sql | xml | json)
+               
+                  ;;
               *)
                   # Display a line
                   echo "" 
