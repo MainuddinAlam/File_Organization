@@ -28,7 +28,9 @@ if [ -d "$directoryPath" ]; then
      
       # Check if the file contains a dot
       if [[ "$file" == *.* ]]; then
-          echo "The string contains a dot."
+          # Extract their extension
+          extension="${file##*.}"
+          echo "The extension is: $extension"
       else
           echo "The string does not contain a dot."
       fi
