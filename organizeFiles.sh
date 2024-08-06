@@ -21,13 +21,23 @@ if [ -d "$directoryPath" ]; then
   for file in *; do
     # Check if it is a file and not directory
     if [ -f "$file" ]; then
-      # Organize the files
+     
+      # Organize the file
+      echo ""
       echo "Handling file: $file"
-
+     
+      # Check if the file contains a dot
+      if [[ "$file" == *.* ]]; then
+          echo "The string contains a dot."
+      else
+          echo "The string does not contain a dot."
+      fi
+      
     fi
   done
  
-
+  
+  echo ""
   echo "The files and folders have been organized as follows:"
  # ls -la
 
