@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Bash script to organize files in a directory based on their extensions
 # Author: Mainuddin Alam Irteja
 
@@ -11,7 +10,6 @@ echo -e "Hello there. This bash script helps organizing files based on their ext
 echo "Please give the path to the directory where you wish to organize files: "
 read directoryPath
 
-
 # Check if the given directory exists
 if [ -d "$directoryPath" ]; then
   # If it exists, go to it
@@ -21,21 +19,33 @@ if [ -d "$directoryPath" ]; then
   for file in *; do
     # Check if it is a file and not directory
     if [ -f "$file" ]; then
-     
       # Organize the file
       echo ""
       echo "Handling file: $file"
      
       # Check if the file contains a dot
       if [[ "$file" == *.* ]]; then
-         
           # Extract their extension
           extension="${file##*.}"
           echo "The extension is: $extension"
           
           # Organize the files depending on the extension's case
           case = "$extension" in
-          
+              # Organize documents
+              pdf | doc | docx | txt | xls | xlsx)
+             
+                  ;;
+
+              # Organize images
+              jpg | jpeg | png | gif | bmp
+                  
+                  ;;
+
+              # Organize audio
+
+              # Organize videos
+
+              # Organize programs       
 
               *)
                   # Display a line
@@ -56,7 +66,6 @@ if [ -d "$directoryPath" ]; then
 
   # Ending the for block
   done
- 
   
   echo ""
   echo "The files and folders have been organized as follows:"
