@@ -27,34 +27,74 @@ if [ -d "$directoryPath" ]; then
       if [[ "$file" == *.* ]]; then
           # Extract their extension
           extension="${file##*.}"
-          echo "The extension is: $extension"
           
           # Organize the files depending on the extension's case
           case "$extension" in
+             
               # Organize documents
               pdf | doc | docx | txt | xls | xlsx | ppt | pptx)
-              mv "$file" ./Documents || mkdir Documents && mv "$file" ./Documents             
+              # Check if Documents directory exists of not 
+              if [ -d "./Documents"]; then
+                  mv "$file" "./Documents"
+              else
+                  mkdir Documents
+                  chmod 777 "./Documents"
+                  mv "$file" "./Documents"
+              # Ending the if block for checking the Documents directory
+              fi
                   ;;
 
               # Organize images
               jpg | jpeg | png | gif | bmp)
-              mv "$file" ./Images || mkdir Images && mv "$file" ./Images             
+              # Check if Images directory exists of not 
+              if [ -d "./Images"]; then
+                   mv "$file" "./Images"
+              else
+                   mkdir Images
+                   chmod 777 "./Images"
+                   mv "$file" "./Images"
+              # Ending the if block for checking the Images directory
+              fi
                   ;;
 
               # Organize audios
               mp3 | wav | flac)
-              mv "$file" ./Audios || mkdir Audios && mv "$file" ./Audios             
+              # Check if Audios directory exists of not 
+              if [ -d "./Audios"]; then
+                   mv "$file" "./Audios"
+              else
+                   mkdir Images
+                   chmod 777 "./Audios"
+                   mv "$file" "./Audios"
+              # Ending the if block for checking the Audios directory
+              fi
                   ;;
 
               # Organize videos
               mp4 | avi | mkv | mov)
-              mv "$file" ./Videos || mkdir Videos && mv "$file" ./Videos             
+              # Check if Videos directory exists of not 
+              if [ -d "./Videos"]; then
+                   mv "$file" "./Videos"
+              else
+                   mkdir Videos
+                   chmod 777 "./Videos"
+                   mv "$file" "./Videos"
+              # Ending the if block for checking the Videos directory
+              fi
                   ;;
               
               # Organize programs       
               py | java | c | cpp | js | sh | ts | cs | go | rb | swift | kt | html |css | sql | xml | json)
-              mv "$file" ./Programs || mkdir Programs && mv "$file" ./Programs             
-                  ;;
+              # Check if Programs directory exists of not 
+              if [ -d "./Programs"]; then
+                   mv "$file" "./Programs"
+              else
+                   mkdir Programs
+                   chmod 777 "./Programs"
+                   mv "$file" "./Programs"
+              # Ending the if block for checking the Programs directory
+              fi
+              ;;
               *)
                   # Display a line
                   echo "" 
@@ -64,8 +104,16 @@ if [ -d "$directoryPath" ]; then
              
        # Handle when file does not contain a dot
        else
-           mv "$file" ./Others || mkdir Others && mv "$file" ./Others             
- 
+           # Check if Others directory exists of not 
+           if [ -d "./Others"]; then
+                mv "$file" "./Others"
+           else
+                mkdir Others
+                chmod 777 "./Others"
+                mv "$file" "./Others"
+           # Ending the if block for checking the Others directory
+           fi
+     
       # Ending the if block which handles if file contains a dot
       fi
     
@@ -85,4 +133,4 @@ else
 
 # Ending the main if block
 fi 
- 
+
