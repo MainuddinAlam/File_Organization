@@ -1,5 +1,7 @@
 # File_Organization
-Bash script to organize files into directories based on their extension
+
+Welcome to my File Organization repo.
+This bash script helps with organizing  directories based on their extension
 
 Tutorial:
 1) Clone this git repository to get the script
