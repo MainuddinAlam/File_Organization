@@ -30,30 +30,30 @@ if [ -d "$directoryPath" ]; then
           echo "The extension is: $extension"
           
           # Organize the files depending on the extension's case
-          case = "$extension" in
+          case "$extension" in
               # Organize documents
               pdf | doc | docx | txt | xls | xlsx | ppt | pptx)
-             
+              mv "$file" ./Documents || mkdir Documents && mv "$file" ./Documents             
                   ;;
 
               # Organize images
               jpg | jpeg | png | gif | bmp)
-                  
+              mv "$file" ./Images || mkdir Images && mv "$file" ./Images             
                   ;;
 
-              # Organize audio
+              # Organize audios
               mp3 | wav | flac)
-
+              mv "$file" ./Audios || mkdir Audios && mv "$file" ./Audios             
                   ;;
 
               # Organize videos
               mp4 | avi | mkv | mov)
-
+              mv "$file" ./Videos || mkdir Videos && mv "$file" ./Videos             
                   ;;
               
               # Organize programs       
               py | java | c | cpp | js | sh | ts | cs | go | rb | swift | kt | html |css | sql | xml | json)
-               
+              mv "$file" ./Programs || mkdir Programs && mv "$file" ./Programs             
                   ;;
               *)
                   # Display a line
@@ -64,8 +64,8 @@ if [ -d "$directoryPath" ]; then
              
        # Handle when file does not contain a dot
        else
-          echo "The string does not contain a dot."
-     
+           mv "$file" ./Others || mkdir Others && mv "$file" ./Others             
+ 
       # Ending the if block which handles if file contains a dot
       fi
     
