@@ -22,3 +22,4 @@ Please give the path to the directory where you wish to organize files:
 
 8) You should see the files in the assets directory organized into directories based on their extension
 9) Now you can run the script again on your desired directory to help with your file organization
+10) Thank you for checking out this repository
